@@ -142,7 +142,7 @@ function docker_build() {
   fi
 
   echo "docker buildx build --platform linux/arm64 -f $INPUT_DOCKERFILE $docker_tag_args $INPUT_PATH"
-  docker buildx build --platform linux/arm64 -f $INPUT_DOCKERFILE $docker_tag_args $INPUT_PATH
+  docker build --platform linux/arm64 -f $INPUT_DOCKERFILE $docker_tag_args $INPUT_PATH
   echo "== FINISHED DOCKERIZE"
 }
 
