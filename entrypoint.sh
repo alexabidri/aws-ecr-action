@@ -141,8 +141,8 @@ function docker_build() {
     INPUT_EXTRA_BUILD_ARGS="$INPUT_EXTRA_BUILD_ARGS --cache-from=$INPUT_CACHE_FROM"
   fi
 
-  echo "docker buildx build --build-arg project=web --platform linux/arm64 -f $INPUT_DOCKERFILE $docker_tag_args $INPUT_PATH"
-  docker buildx build --build-arg project=web --platform linux/arm64 -f $INPUT_DOCKERFILE $docker_tag_args $INPUT_PATH
+  echo "docker buildx build --platform linux/arm64 -f $INPUT_DOCKERFILE $docker_tag_args $INPUT_PATH"
+  docker buildx build --platform linux/arm64 -f $INPUT_DOCKERFILE $docker_tag_args $INPUT_PATH
   echo "== FINISHED DOCKERIZE"
 }
 
